@@ -1,3 +1,18 @@
 spring:
-    application:
-        name: wallet
+  application:
+    name: wallet
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wallet
+    username: wallet
+    password: wallet
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: ${JWT_SECRET:changeme-local-dev-secret-minimum-32ch}
+  expiration-ms: 86400000
